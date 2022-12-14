@@ -1,1 +1,1 @@
-styleMock.js;
+module.exports = {};
