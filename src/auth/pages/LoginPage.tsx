@@ -9,6 +9,8 @@ import { useForm,SubmitHandler } from "react-hook-form"
 import { startLogin } from "../../store/auth"
 import { useSelector } from "react-redux"
 
+import LogoFarmacia from './../../assets/farmacia_logo.png'
+
 type Inputs = {
   username : string,
   password : string
@@ -31,7 +33,7 @@ export const LoginPage = () => {
       aria-label="submit-form-login"
       className="animate__animated animate__fadeIn animate__faster" onSubmit={handleSubmit(onLoginSubmit)} >
         <Box width="100%" style={{ display: "grid", placeItems: "center" }}>
-          <img src="/src/assets/farmacia_logo.png" alt="" style={{ height: "150px", display: "block", margin: "auto" }} />
+          <img src={LogoFarmacia} alt="" style={{ height: "150px", display: "block", margin: "auto" }} />
         </Box>
         <Grid container width={"100%"} direction="column" >
           <Typography variant='h6' textAlign={"center"} textTransform="uppercase" >La casa de la salud</Typography>
