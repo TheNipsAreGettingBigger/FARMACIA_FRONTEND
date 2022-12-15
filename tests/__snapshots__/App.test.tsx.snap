@@ -18,7 +18,7 @@ exports[`Test al component <App /> Deberia hacer match con el snapshot 1`] = `
         >
           <img
             alt=""
-            src="/src/assets/farmacia_logo.png"
+            src=""
             style="height: 150px; display: block; margin: auto;"
           />
         </div>
