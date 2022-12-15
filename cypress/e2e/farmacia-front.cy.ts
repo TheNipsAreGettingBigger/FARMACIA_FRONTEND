@@ -29,6 +29,8 @@ describe('Pruebas del Sprint 1', () => {
     cy.get('#txtDescription').type("Description #"+number)
     cy.get('#btn-save').click()
     cy.contains("Producto Producto #"+number+" creado correctamente").should("exist")
+    // cy.wait(5000)
+    cy.get('[href="/inventory"]').click()
     cy.get('[aria-label="Show filters"]').click()
     cy.get('.MuiDataGrid-filterForm input').type("Producto #"+number).type('{enter}')
     cy.wait(5000)
@@ -38,7 +40,8 @@ describe('Pruebas del Sprint 1', () => {
         let id = $row[0].dataset.id
         cy.request({
           method : 'DELETE',
-          url : 'http://localhost:8000/api/products/delete/'+id,
+          // url : 'http://localhost:8000/api/products/delete/'+id,
+          url : 'https://farmaciabackend-production.up.railway.app/api/products/delete/'+id,
           headers:{
             'Content-Type':'application/json',
             'Authorization': 'Bearer '+localStorage.getItem("token"),
