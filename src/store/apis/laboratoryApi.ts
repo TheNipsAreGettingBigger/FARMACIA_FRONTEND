@@ -2,8 +2,8 @@ import { createApi,fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 export const laboratoryApi = createApi({
   reducerPath : "laboratory",
   baseQuery : fetchBaseQuery({
-    // baseUrl : "http://localhost:8000/api",
-    baseUrl : "https://farmaciabackend-production.up.railway.app/api",
+    baseUrl : "http://localhost:8000/api",
+    // baseUrl : "https://farmaciabackend-production.up.railway.app/api",
     prepareHeaders :(headers) => {
       const token = localStorage.getItem("token")
       headers.set('Content-Type', `application/json`)

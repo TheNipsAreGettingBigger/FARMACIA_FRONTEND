@@ -40,8 +40,8 @@ describe('Pruebas del Sprint 1', () => {
         let id = $row[0].dataset.id
         cy.request({
           method : 'DELETE',
-          // url : 'http://localhost:8000/api/products/delete/'+id,
-          url : 'https://farmaciabackend-production.up.railway.app/api/products/delete/'+id,
+          url : 'http://localhost:8000/api/products/delete/'+id,
+          // url : 'https://farmaciabackend-production.up.railway.app/api/products/delete/'+id,
           headers:{
             'Content-Type':'application/json',
             'Authorization': 'Bearer '+localStorage.getItem("token"),
