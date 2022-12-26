@@ -8,12 +8,14 @@ import {
   Title,
   Tooltip,
   Legend,
-  BarElement
+  BarElement,
+  ChartData
 } from 'chart.js';
 
 import { Line ,Bar } from 'react-chartjs-2';
 import { getAllProducts, getMostSelledProducts } from '../helpers/product';
 import { Box, Grid, Typography } from '@mui/material';
+import { Resume } from '../components/Resume';
 
 ChartJS.register(
   CategoryScale,
@@ -56,10 +58,12 @@ export const HomeView = () => {
     }
   },[])
 
-  var dataReg = {
+  var dataReg: ChartData<"bar", any, unknown> = {
     labels: chartRe?.map((product:any) => product.name),
+    
     datasets: [{
-      label: `${chartRe?.length} Productos Registrados`,
+      label: `Productos Registrados`,
+      
       data: chartRe?.map((product:any) => product.stock),
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
@@ -118,6 +122,7 @@ export const HomeView = () => {
 
   return (
     <Grid container sx={{ width:"100%" }}>
+      <Resume />
       <Grid container justifyContent={"center"} sx={{ gap:3 }} >
         <Box sx={{
           width: "600px",

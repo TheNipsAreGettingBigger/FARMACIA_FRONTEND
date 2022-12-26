@@ -17,12 +17,15 @@ import { EditOutlined } from "@mui/icons-material";
 import { GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
 import moment from "moment";
 import { useGetLaboratoriesQuery } from "../../store/apis/laboratoryApi";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ModalCreateLaboratory } from "../components/ModalCreateLaboratory";
 import { Loader } from "../components/Loader";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { ModalEditLaboratory } from "../components/ModalEditLaboratory";
+
+
+import { getLaboratories } from './../helpers/laboratory'
 
 export const LaboratoryView = () => {
   const laboratoryResponse = useGetLaboratoriesQuery({});
@@ -34,12 +37,25 @@ export const LaboratoryView = () => {
     create: false,
   });
 
+  const [laboratories,setLaboratories] = useState<any>(null)
+
+  const [refetch,setRefetch] = useState<boolean>(false)
+
+  useEffect(()=>{
+    getLaboratories()
+    .then(response=>{
+      setLaboratories(response.data)
+    })
+  },[refetch])
+
   const [openModal, setOpenModal] = useState(false);
   const onOpenModal = () => {
     setOpenModal(true);
   };
   const onCloseModal = () => {
-    laboratoryResponse.refetch();
+    // laboratoryResponse.refetch();
+    setRefetch(f=>!f)
+    console.log('refetch');
     setOpenModal(false);
   };
 

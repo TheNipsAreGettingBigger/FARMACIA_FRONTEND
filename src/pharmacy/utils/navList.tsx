@@ -18,12 +18,12 @@ export const navList = [
     path : "/employees",
     badge: 0,
   },
-  {
-    icon : GroupIcon,
-    desc : "Clientes",
-    path : "/customers",
-    badge: 0,
-  },
+  // {
+  //   icon : GroupIcon,
+  //   desc : "Clientes",
+  //   path : "/customers",
+  //   badge: 0,
+  // },
   {
     icon : InventoryIcon,
     desc : "Inventario",
@@ -36,11 +36,11 @@ export const navList = [
     path : "/laboratories",
     badge: 0,
   },
-  {
-    icon : ShoppingCartIcon,
-    desc : "Ventas",
-    path : "/pucharses",
-    badge: 0,
+  // {
+  //   icon : ShoppingCartIcon,
+  //   desc : "Ventas",
+  //   path : "/pucharses",
+  //   badge: 0,
 
-  }
+  // }
 ]

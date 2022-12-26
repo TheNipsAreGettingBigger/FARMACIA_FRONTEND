@@ -5,11 +5,13 @@ import { laboratoryApi } from "./apis/laboratoryApi";
 import { authSlice } from "./auth";
 import { productSlice } from "./inventory/inventorySlice";
 import { laboratorySlice } from "./laboratory/laboratorySlice";
+import { employeeSlice } from "./employee/employeeSlice";
 
 export const store = configureStore({
   reducer :{
     auth : authSlice.reducer,
     product : productSlice.reducer,
+    employee : employeeSlice.reducer,
     laboratoryStore : laboratorySlice.reducer,
     [inventoryApi.reducerPath] : inventoryApi.reducer,
     [laboratoryApi.reducerPath] : laboratoryApi.reducer,

@@ -11,7 +11,7 @@ export const laboratoryApi = createApi({
       return headers
     }
   }),
-  keepUnusedDataFor: 1,
+  keepUnusedDataFor: 0,
   refetchOnMountOrArgChange: 1,
   endpoints: (builder) => ({
     getLaboratories : builder.query({

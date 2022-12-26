@@ -43,3 +43,16 @@ export const updateLaboratory = async (laboratory:any) => {
     return (err as AxiosError ).response?.data
   }
 }
+
+export const getLaboratories = async () => {
+  try {
+    const { data } = await pharmacyApi.get("/laboratories",{
+      headers:{
+        "Authorization" : `Bearer ${localStorage.getItem("token")}`
+      }
+    })
+    return data
+  } catch (error) {
+    return (error as AxiosError ).response?.data
+  }
+}
